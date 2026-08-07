@@ -1,0 +1,1616 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Joskev Developers</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --orange:#f97316;
+    --light:#fb923c;
+
+    --purple:#8b5cf6;
+    --blue:#06b6d4;
+    --pink:#ec4899;
+    --green:#22c55e;
+
+    --dark:#0f172a;
+    --card:#1e293b;
+
+    --gray:#cbd5e1;
+    --muted:#94a3b8;
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:var(--dark);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+body::before,
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    z-index:-1;
+
+    pointer-events:none;
+
+    filter:blur(20px);
+
+}
+
+
+body::before{
+
+    top:-320px;
+    left:-260px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(249,115,22,.23),
+            transparent 70%
+        );
+
+}
+
+
+body::after{
+
+    right:-300px;
+    bottom:-320px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139,92,246,.22),
+            transparent 70%
+        );
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:18px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.88);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    z-index:1000;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+.logo > i{
+
+    color:var(--orange);
+
+    font-size:28px;
+
+}
+
+
+.logo div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:1.1;
+
+}
+
+
+.logo strong{
+
+    font-size:22px;
+
+}
+
+
+.logo span{
+
+    color:var(--orange);
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    display:flex;
+
+    gap:28px;
+
+}
+
+
+nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+
+nav a i{
+
+    display:none;
+
+    color:var(--orange);
+
+}
+
+
+nav a:hover{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   RESUME
+========================================================= */
+
+.resume{
+
+    padding:12px 25px;
+
+    border-radius:40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--light)
+        );
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    padding:155px 8% 60px;
+
+    text-align:center;
+
+}
+
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 18px;
+
+    border-radius:50px;
+
+    background:#f9731620;
+
+    border:1px solid var(--orange);
+
+    color:var(--light);
+
+    font-size:13px;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero h1{
+
+    font-size:58px;
+
+    line-height:1.15;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero h1 span{
+
+    color:var(--orange);
+
+}
+
+
+.hero p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:var(--gray);
+
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:25px 8% 100px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+}
+
+
+/* =========================================================
+   CONTACT INTRO CARD
+========================================================= */
+
+.contact-intro{
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,.95),
+            rgba(15,23,42,.95)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.contact-intro h2{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+.contact-intro h2 span{
+
+    color:var(--orange);
+
+}
+
+
+.contact-intro p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+}
+
+
+/* =========================================================
+   CONTACT ITEMS
+========================================================= */
+
+.contact-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+.contact-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:17px;
+
+    border-radius:16px;
+
+    background:#ffffff08;
+
+    border:
+        1px solid
+        #ffffff0d;
+
+    transition:.3s;
+
+}
+
+
+.contact-item:hover{
+
+    transform:translateX(6px);
+
+    border-color:
+        rgba(249,115,22,.35);
+
+    background:#f9731610;
+
+}
+
+
+.contact-icon{
+
+    width:50px;
+    height:50px;
+
+    min-width:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    font-size:21px;
+
+}
+
+
+.whatsapp-icon{
+
+    background:#25D36620;
+
+    color:#25D366;
+
+}
+
+
+.email-icon{
+
+    background:#f9731620;
+
+    color:var(--orange);
+
+}
+
+
+.location-icon{
+
+    background:#06b6d420;
+
+    color:#22d3ee;
+
+}
+
+
+.contact-item strong{
+
+    display:block;
+
+    font-size:14px;
+
+    margin-bottom:3px;
+
+}
+
+
+.contact-item span{
+
+    color:var(--gray);
+
+    font-size:13px;
+
+}
+
+
+.contact-item a{
+
+    color:var(--gray);
+
+    text-decoration:none;
+
+    font-size:13px;
+
+}
+
+
+.contact-item a:hover{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   RIGHT CONTACT CARD
+========================================================= */
+
+.contact-action{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1e293b,
+            #111827
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    text-align:center;
+
+}
+
+
+.contact-action::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    top:-130px;
+    right:-100px;
+
+    border-radius:50%;
+
+    background:
+        rgba(249,115,22,.15);
+
+    filter:blur(10px);
+
+}
+
+
+.contact-action::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    bottom:-120px;
+    left:-80px;
+
+    border-radius:50%;
+
+    background:
+        rgba(139,92,246,.15);
+
+    filter:blur(10px);
+
+}
+
+
+.action-icon{
+
+    position:relative;
+
+    width:90px;
+    height:90px;
+
+    margin:15px auto 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--pink),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(249,115,22,.25);
+
+}
+
+
+.action-icon i{
+
+    font-size:40px;
+
+}
+
+
+.contact-action h2{
+
+    position:relative;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+.contact-action p{
+
+    position:relative;
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    max-width:430px;
+
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-buttons{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.action-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:13px 23px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:13px;
+
+    transition:.3s;
+
+}
+
+
+.action-button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+.whatsapp-button{
+
+    background:#25D366;
+
+    box-shadow:
+        0 10px 25px
+        rgba(37,211,102,.20);
+
+}
+
+
+.email-button{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--light)
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(249,115,22,.20);
+
+}
+
+
+/* =========================================================
+   AVAILABILITY
+========================================================= */
+
+.availability{
+
+    position:relative;
+
+    margin-top:25px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:#22c55e10;
+
+    border:
+        1px solid
+        #22c55e30;
+
+    color:#86efac;
+
+    font-size:12px;
+
+}
+
+
+.availability i{
+
+    margin-right:6px;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+    padding:75px 8%;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f97316,
+            #ec4899,
+            #8b5cf6
+        );
+
+    background-size:200% 200%;
+
+    animation:
+        ctaColors 8s ease infinite;
+
+}
+
+
+@keyframes ctaColors{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+.cta h2{
+
+    font-size:38px;
+
+    margin-bottom:15px;
+
+}
+
+
+.cta p{
+
+    margin-bottom:28px;
+
+    font-size:15px;
+
+}
+
+
+.cta-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:14px 30px;
+
+    border-radius:40px;
+
+    background:white;
+
+    color:var(--orange);
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+.cta-button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,.25);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:30px;
+
+    background:#0b1323;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+}
+
+
+footer span{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    header{
+
+        padding:10px 4%;
+
+        flex-direction:column;
+
+        gap:7px;
+
+    }
+
+
+    .logo > i{
+
+        font-size:22px;
+
+    }
+
+
+    .logo strong{
+
+        font-size:18px;
+
+    }
+
+
+    .logo span{
+
+        font-size:11px;
+
+    }
+
+
+    nav{
+
+        width:100%;
+
+        display:flex;
+
+        gap:6px;
+
+        justify-content:flex-start;
+
+        overflow-x:auto;
+
+        overflow-y:hidden;
+
+        scrollbar-width:none;
+
+        white-space:nowrap;
+
+        padding:3px 0;
+
+    }
+
+
+    nav::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+
+    nav a{
+
+        flex-shrink:0;
+
+        padding:8px 11px;
+
+        border-radius:25px;
+
+        background:#ffffff0c;
+
+        border:
+            1px solid
+            #ffffff12;
+
+        font-size:10px;
+
+        gap:5px;
+
+    }
+
+
+    nav a i{
+
+        display:inline-block;
+
+        font-size:11px;
+
+    }
+
+
+    nav a:hover{
+
+        color:white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--orange),
+                var(--light)
+            );
+
+    }
+
+
+    .resume{
+
+        display:none;
+
+    }
+
+
+    /* HERO */
+
+    .hero{
+
+        padding:155px 5% 45px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:36px;
+
+    }
+
+
+    .hero p{
+
+        font-size:14px;
+
+    }
+
+
+    /* CONTACT */
+
+    .contact-section{
+
+        grid-template-columns:1fr;
+
+        padding:20px 15px 65px;
+
+        gap:15px;
+
+    }
+
+
+    .contact-intro,
+    .contact-action{
+
+        padding:25px 18px;
+
+        border-radius:18px;
+
+    }
+
+
+    .contact-intro h2,
+    .contact-action h2{
+
+        font-size:23px;
+
+    }
+
+
+    .contact-intro p{
+
+        font-size:13px;
+
+    }
+
+
+    .contact-item{
+
+        padding:13px;
+
+    }
+
+
+    .contact-icon{
+
+        width:43px;
+        height:43px;
+
+        min-width:43px;
+
+        font-size:18px;
+
+    }
+
+
+    .contact-item strong{
+
+        font-size:13px;
+
+    }
+
+
+    .contact-item span,
+    .contact-item a{
+
+        font-size:11px;
+
+    }
+
+
+    .action-icon{
+
+        width:70px;
+        height:70px;
+
+    }
+
+
+    .action-icon i{
+
+        font-size:30px;
+
+    }
+
+
+    .contact-action p{
+
+        font-size:13px;
+
+    }
+
+
+    .action-button{
+
+        width:100%;
+
+        font-size:12px;
+
+    }
+
+
+    .cta{
+
+        padding:60px 5%;
+
+    }
+
+
+    .cta h2{
+
+        font-size:27px;
+
+    }
+
+
+    .cta p{
+
+        font-size:13px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:450px){
+
+    .hero h1{
+
+        font-size:31px;
+
+    }
+
+
+    .contact-section{
+
+        padding-left:10px;
+        padding-right:10px;
+
+    }
+
+
+    .contact-intro,
+    .contact-action{
+
+        padding:22px 14px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="logo">
+
+    <i class="fa-solid fa-laptop-code"></i>
+
+    <div>
+
+        <strong>Joskev</strong>
+
+        <span>Developers</span>
+
+    </div>
+
+</div>
+
+
+<nav>
+
+    <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        Home
+
+    </a>
+
+
+    <a href="about.html">
+
+        <i class="fa-solid fa-user"></i>
+
+        About
+
+    </a>
+
+
+    <a href="Technologies.html">
+
+        <i class="fa-solid fa-code"></i>
+
+        Technologies
+
+    </a>
+
+
+    <a href="services.html">
+
+        <i class="fa-solid fa-briefcase"></i>
+
+        Services
+
+    </a>
+
+
+    <a href="contact.html">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        Contact
+
+    </a>
+
+</nav>
+
+
+<a
+    href="JOSIAH kimutai latest cv 2026.pdf"
+    class="resume">
+
+    <i class="fa-solid fa-download"></i>
+
+    Resume
+
+</a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-badge">
+
+    <i class="fa-solid fa-comments"></i>
+
+    Let's Talk
+
+</div>
+
+
+<h1>
+
+    Contact <span>Joskev</span>
+
+</h1>
+
+
+<p>
+
+    Let's discuss your next website, mobile
+    application, business system or software project.
+
+    Ready to transform your idea into a powerful
+    digital solution? Contact us through any
+    platform below.
+
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact-section">
+
+
+<!-- LEFT -->
+
+<div class="contact-intro">
+
+    <h2>
+
+        Let's Start a <span>Conversation</span>
+
+    </h2>
+
+
+    <p>
+
+        Whether you have a project idea, need
+        technical support, or want to discuss
+        a digital solution, we would love to
+        hear from you.
+
+    </p>
+
+
+    <div class="contact-list">
+
+
+        <!-- WHATSAPP -->
+
+        <div class="contact-item">
+
+            <div class="contact-icon whatsapp-icon">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>WhatsApp</strong>
+
+                <a
+                    href="https://wa.me/254725880306"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    +254 725 880 306
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="contact-item">
+
+            <div class="contact-icon email-icon">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>Email</strong>
+
+                <a
+                    href="mailto:josiahkimutai78@gmail.com">
+
+                    josiahkimutai78@gmail.com
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div class="contact-item">
+
+            <div class="contact-icon location-icon">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>Location</strong>
+
+                <span>Kenya</span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="contact-action">
+
+    <div class="action-icon">
+
+        <i class="fa-solid fa-paper-plane"></i>
+
+    </div>
+
+
+    <h2>
+
+        Ready To Build?
+
+    </h2>
+
+
+    <p>
+
+        Tell us about your idea and let's
+        turn it into a professional,
+        reliable and modern digital solution.
+
+    </p>
+
+
+    <div class="action-buttons">
+
+
+        <a
+            href="https://wa.me/254725880306"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="action-button whatsapp-button">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            WhatsApp Us
+
+        </a>
+
+
+        <a
+            href="mailto:josiahkimutai78@gmail.com"
+            class="action-button email-button">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            Send Email
+
+        </a>
+
+
+    </div>
+
+
+    <div class="availability">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        Available for Freelance & Full-Time Projects
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+<h2>
+
+    Have An Idea?
+
+</h2>
+
+
+<p>
+
+    Let's turn your idea into something powerful.
+
+</p>
+
+
+<a
+    href="https://wa.me/254725880306"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="cta-button">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+    Start a Conversation
+
+</a>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+© 2026
+<span>Joskev Developers</span>
+| Building Digital Solutions
+
+</footer>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Technologies | Joskev Developers</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --orange:#f97316;
+    --light:#fb923c;
+
+    --purple:#8b5cf6;
+    --blue:#06b6d4;
+    --pink:#ec4899;
+
+    --dark:#0f172a;
+    --dark2:#111827;
+
+    --card:#1e293b;
+
+    --gray:#cbd5e1;
+    --muted:#94a3b8;
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:Poppins,sans-serif;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:var(--dark);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+body::before,
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:600px;
+    height:600px;
+
+    border-radius:50%;
+
+    z-index:-1;
+
+    filter:blur(20px);
+
+    pointer-events:none;
+
+}
+
+
+body::before{
+
+    top:-300px;
+    left:-250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(249,115,22,.22),
+            transparent 70%
+        );
+
+}
+
+
+body::after{
+
+    bottom:-300px;
+    right:-250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139,92,246,.22),
+            transparent 70%
+        );
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    padding:18px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#0f172add;
+
+    backdrop-filter:blur(15px);
+
+    z-index:1000;
+
+}
+
+
+.logo{
+
+    font-size:27px;
+
+    font-weight:700;
+
+}
+
+
+.logo i,
+.logo span{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   RESUME
+========================================================= */
+
+.resume{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--light)
+        );
+
+    padding:12px 25px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.resume:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(249,115,22,.35);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    padding:155px 8% 50px;
+
+    text-align:center;
+
+}
+
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 18px;
+
+    border-radius:50px;
+
+    background:#f9731620;
+
+    border:1px solid var(--orange);
+
+    color:var(--light);
+
+    font-size:13px;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero h1{
+
+    font-size:58px;
+
+    line-height:1.1;
+
+}
+
+
+.hero h1 span{
+
+    color:var(--orange);
+
+}
+
+
+.hero p{
+
+    max-width:780px;
+
+    margin:20px auto;
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   TECHNOLOGY GRID
+========================================================= */
+
+.tech-container{
+
+    padding:35px 8% 90px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:22px;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   TECHNOLOGY CARD
+========================================================= */
+
+.tech-item{
+
+    position:relative;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,.95),
+            rgba(15,23,42,.95)
+        );
+
+    padding:28px 18px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    overflow:hidden;
+
+}
+
+
+.tech-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    right:-45px;
+    top:-45px;
+
+    border-radius:50%;
+
+    background:
+        rgba(249,115,22,.08);
+
+    filter:blur(10px);
+
+}
+
+
+.tech-item:hover{
+
+    transform:
+        translateY(-9px)
+        scale(1.02);
+
+    border-color:
+        rgba(249,115,22,.35);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.25);
+
+}
+
+
+/* =========================================================
+   TECH ICON
+========================================================= */
+
+.tech-icon{
+
+    width:75px;
+    height:75px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff0d;
+
+}
+
+
+.tech-item i{
+
+    font-size:42px;
+
+    transition:.3s;
+
+}
+
+
+.tech-item:hover i{
+
+    transform:
+        scale(1.12)
+        rotate(3deg);
+
+}
+
+
+/* =========================================================
+   TECH TEXT
+========================================================= */
+
+.tech-item h3{
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+}
+
+
+.tech-item p{
+
+    font-size:13px;
+
+    color:var(--gray);
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#0b1323;
+
+    padding:28px;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+}
+
+
+footer span{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    header{
+
+        padding:12px 4%;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:5px;
+
+    }
+
+
+    .logo{
+
+        width:100%;
+
+        text-align:center;
+
+        font-size:22px;
+
+    }
+
+
+    .menu{
+
+        display:none !important;
+
+    }
+
+
+    nav{
+
+        position:static;
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:row;
+
+        justify-content:flex-start;
+
+        align-items:center;
+
+        gap:7px;
+
+        padding:8px 2px;
+
+        background:transparent;
+
+        overflow-x:auto;
+
+        overflow-y:hidden;
+
+        white-space:nowrap;
+
+        scrollbar-width:none;
+
+    }
+
+
+    nav::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+
+    nav a{
+
+        flex-shrink:0;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        gap:6px;
+
+        padding:9px 12px;
+
+        border-radius:25px;
+
+        background:#ffffff0d;
+
+        border:1px solid #ffffff12;
+
+        font-size:11px;
+
+    }
+
+
+    nav a i{
+
+        font-size:12px;
+
+        color:var(--orange);
+
+    }
+
+
+    nav a:hover{
+
+        color:white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--orange),
+                var(--light)
+            );
+
+    }
+
+
+    nav a:hover i{
+
+        color:white;
+
+    }
+
+
+    .resume{
+
+        display:none;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero{
+
+        padding:170px 5% 40px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:40px;
+
+    }
+
+
+    .hero p{
+
+        font-size:14px;
+
+    }
+
+
+    /* =====================================================
+       TECH GRID
+    ===================================================== */
+
+    .tech-container{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        padding:
+            20px 5% 60px;
+
+        gap:12px;
+
+    }
+
+
+    .tech-item{
+
+        padding:18px 8px;
+
+        border-radius:15px;
+
+    }
+
+
+    .tech-icon{
+
+        width:58px;
+        height:58px;
+
+        margin-bottom:12px;
+
+        border-radius:15px;
+
+    }
+
+
+    .tech-item i{
+
+        font-size:30px;
+
+    }
+
+
+    .tech-item h3{
+
+        font-size:14px;
+
+    }
+
+
+    .tech-item p{
+
+        font-size:11px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:450px){
+
+    .tech-container{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+
+        padding:
+            20px 15px 50px;
+
+    }
+
+
+    .tech-item{
+
+        padding:15px 5px;
+
+    }
+
+
+    .tech-icon{
+
+        width:52px;
+        height:52px;
+
+        border-radius:13px;
+
+    }
+
+
+    .tech-item i{
+
+        font-size:26px;
+
+    }
+
+
+    .tech-item h3{
+
+        font-size:13px;
+
+    }
+
+
+    .tech-item p{
+
+        font-size:10px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="logo">
+
+
+<i class="fa-solid fa-laptop-code"></i>
+
+Joskev <span>Developers</span>
+
+
+</div>
+
+<nav>
+
+
+<a href="index.html">
+
+    <i class="fa-solid fa-house"></i>
+
+    Home
+
+</a>
+
+
+<a href="about.html">
+
+    <i class="fa-solid fa-user"></i>
+
+    About
+
+</a>
+
+
+<a href="Technologies.html">
+
+    <i class="fa-solid fa-code"></i>
+
+    Technologies
+
+</a>
+
+
+<a href="services.html">
+
+    <i class="fa-solid fa-briefcase"></i>
+
+    Services
+
+</a>
+
+
+<a href="contact.html">
+
+    <i class="fa-solid fa-envelope"></i>
+
+    Contact
+
+</a>
+
+
+</nav>
+
+<a
+ href="JOSIAH kimutai latest cv 2026.pdf"
+ class="resume">
+
+
+<i class="fa fa-download"></i>
+
+Resume
+
+
+</a>
+
+</header>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-badge">
+
+
+<i class="fa-solid fa-layer-group"></i>
+
+Our Technology Stack
+
+
+</div>
+
+<h1>
+
+
+Technologies <span>We Use</span>
+
+
+</h1>
+
+<p>
+
+
+Modern technologies we use to create secure,
+scalable and powerful digital solutions for
+businesses and organizations.
+
+
+</p>
+
+</section>
+
+<!-- =====================================================
+     TECHNOLOGY GRID
+===================================================== -->
+
+<section class="tech-container">
+
+<!-- HTML -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-brands fa-html5"
+        style="color:#E34F26">
+    </i>
+
+</div>
+
+<h3>HTML5</h3>
+
+<p>
+    Modern web structure
+</p>
+
+
+</div>
+
+<!-- CSS -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-brands fa-css3-alt"
+        style="color:#1572B6">
+    </i>
+
+</div>
+
+<h3>CSS3</h3>
+
+<p>
+    Responsive interfaces
+</p>
+
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-brands fa-js"
+        style="color:#F7DF1E">
+    </i>
+
+</div>
+
+<h3>JavaScript</h3>
+
+<p>
+    Interactive systems
+</p>
+
+
+</div>
+
+<!-- NODE -->
+
+<div class="tech-item">
+
+<div class="tech-icon">
+
+    <i
+        class="fa-brands fa-node-js"
+        style="color:#68A063">
+    </i>
+
+</div>
+
+<h3>Node.js</h3>
+
+<p>
+    Backend APIs
+</p>
+
+
+</div>
+
+<!-- SUPABASE -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-solid fa-database"
+        style="color:#3ECF8E">
+    </i>
+
+</div>
+
+<h3>Supabase</h3>
+
+<p>
+    Database & authentication
+</p>
+
+
+</div>
+
+<!-- GITHUB -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-brands fa-github">
+    </i>
+
+</div>
+
+<h3>GitHub</h3>
+
+<p>
+    Version control
+</p>
+
+
+</div>
+
+<!-- MOBILE -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-solid fa-mobile-screen-button"
+        style="color:#22c55e">
+    </i>
+
+</div>
+
+<h3>Mobile Apps</h3>
+
+<p>
+    Android applications
+</p>
+
+
+</div>
+
+<!-- CLOUD -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-solid fa-cloud"
+        style="color:#38bdf8">
+    </i>
+
+</div>
+
+<h3>Cloud</h3>
+
+<p>
+    Hosting solutions
+</p>
+
+
+</div>
+
+<!-- AI -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-solid fa-robot"
+        style="color:#a855f7">
+    </i>
+
+</div>
+
+<h3>AI Systems</h3>
+
+<p>
+    Smart automation
+</p>
+
+
+</div>
+
+<!-- SECURITY -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-solid fa-shield-halved"
+        style="color:#ef4444">
+    </i>
+
+</div>
+
+<h3>Cyber Security</h3>
+
+<p>
+    Secure software
+</p>
+
+
+</div>
+
+<!-- MPESA -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-solid fa-credit-card"
+        style="color:#22c55e">
+    </i>
+
+</div>
+
+<h3>M-Pesa API</h3>
+
+<p>
+    Payment integration
+</p>
+
+</div>
+
+<!-- REST -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-solid fa-code-branch"
+        style="color:#06b6d4">
+    </i>
+
+</div>
+
+<h3>REST APIs</h3>
+
+<p>
+    System integration
+</p>
+
+
+</div>
+
+<!-- PYTHON -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-brands fa-python"
+        style="color:#3776AB">
+    </i>
+
+</div>
+
+<h3>Python</h3>
+
+<p>
+    Automation
+</p>
+
+</div>
+
+<!-- LINUX -->
+
+<div class="tech-item">
+
+
+<div class="tech-icon">
+
+    <i
+        class="fa-brands fa-linux"
+        style="color:#FCC624">
+    </i>
+
+</div>
+
+<h3>Linux</h3>
+
+<p>
+    Servers & security
+</p>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+© 2026 <span>Joskev Developers</span>
+• Building Modern Digital Solutions
+
+</footer>
+
+</body>
+
+</html>

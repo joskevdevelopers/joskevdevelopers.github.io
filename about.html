@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Josiah Kimutai | Joskev Developers</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --orange:#f97316;
+    --light:#fb923c;
+
+    --purple:#8b5cf6;
+    --blue:#06b6d4;
+    --pink:#ec4899;
+
+    --dark:#0f172a;
+    --dark2:#111827;
+    --card:#1e293b;
+
+    --gray:#cbd5e1;
+    --muted:#94a3b8;
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:Poppins,sans-serif;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:var(--dark);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before,
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:600px;
+    height:600px;
+
+    border-radius:50%;
+
+    z-index:-1;
+
+    filter:blur(20px);
+
+    pointer-events:none;
+
+}
+
+
+body::before{
+
+    top:-300px;
+    left:-250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(249,115,22,.22),
+            transparent 70%
+        );
+
+}
+
+
+body::after{
+
+    bottom:-300px;
+    right:-250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139,92,246,.22),
+            transparent 70%
+        );
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    padding:18px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#0f172add;
+
+    backdrop-filter:blur(15px);
+
+    z-index:1000;
+
+}
+
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+
+.logo i,
+.logo span{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   RESUME
+========================================================= */
+
+.resume{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--light)
+        );
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.resume:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(249,115,22,.35);
+
+}
+
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.about-hero{
+
+    min-height:100vh;
+
+    padding:150px 8% 80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.about-container{
+
+    width:100%;
+
+    max-width:1200px;
+
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.page-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+
+.page-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 18px;
+
+    border-radius:50px;
+
+    background:#f9731620;
+
+    border:1px solid var(--orange);
+
+    color:var(--light);
+
+    font-size:13px;
+
+    margin-bottom:18px;
+
+}
+
+
+.page-heading h1{
+
+    font-size:58px;
+
+    line-height:1.1;
+
+    margin-bottom:18px;
+
+}
+
+
+.page-heading h1 span{
+
+    color:var(--orange);
+
+}
+
+
+.page-heading p{
+
+    margin:auto;
+
+    max-width:700px;
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   ABOUT GRID
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        .9fr 1.4fr;
+
+    gap:50px;
+
+    align-items:stretch;
+
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-card{
+
+    position:relative;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,.95),
+            rgba(15,23,42,.95)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.25);
+
+}
+
+
+.profile-card:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    top:-100px;
+    right:-100px;
+
+    border-radius:50%;
+
+    background:
+        rgba(249,115,22,.18);
+
+    filter:blur(20px);
+
+}
+
+
+.profile-photo{
+
+    position:relative;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+
+.profile-photo img{
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    padding:8px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--pink),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 0 45px
+        rgba(249,115,22,.25);
+
+}
+
+
+.profile-card h2{
+
+    text-align:center;
+
+    font-size:25px;
+
+    margin-bottom:6px;
+
+}
+
+
+.profile-role{
+
+    text-align:center;
+
+    color:var(--orange);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+
+/* =========================================================
+   QUICK INFO
+========================================================= */
+
+.quick-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+
+.info-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:13px;
+
+    border-radius:14px;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff08;
+
+}
+
+
+.info-icon{
+
+    width:42px;
+    height:42px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:#f9731618;
+
+    color:var(--orange);
+
+}
+
+
+.info-text small{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-bottom:2px;
+
+}
+
+
+.info-text strong{
+
+    font-size:13px;
+
+    font-weight:500;
+
+    color:white;
+
+    word-break:break-word;
+
+}
+
+
+/* =========================================================
+   CONTENT SIDE
+========================================================= */
+
+.about-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+.content-card{
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:
+        rgba(30,41,59,.72);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+
+}
+
+
+.content-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:
+        rgba(249,115,22,.3);
+
+    box-shadow:
+        0 20px 40px
+        rgba(0,0,0,.18);
+
+}
+
+
+.content-card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+
+.content-card h2 i{
+
+    color:var(--orange);
+
+}
+
+
+.content-card p{
+
+    color:var(--gray);
+
+    line-height:1.9;
+
+    max-width:none;
+
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+========================================================= */
+
+.highlight{
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   VALUES GRID
+========================================================= */
+
+.values-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+}
+
+
+.value{
+
+    padding:22px 18px;
+
+    text-align:center;
+
+    border-radius:18px;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff08;
+
+    transition:.3s;
+
+}
+
+
+.value:hover{
+
+    transform:translateY(-5px);
+
+    background:#f9731610;
+
+    border-color:
+        rgba(249,115,22,.3);
+
+}
+
+
+.value i{
+
+    font-size:27px;
+
+    color:var(--orange);
+
+    margin-bottom:12px;
+
+}
+
+
+.value h3{
+
+    font-size:15px;
+
+    margin:0 0 7px;
+
+    color:white;
+
+}
+
+
+.value p{
+
+    font-size:11px;
+
+    line-height:1.6;
+
+    color:var(--muted);
+
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education{
+
+    position:relative;
+
+    padding-left:25px;
+
+    border-left:
+        2px solid
+        rgba(249,115,22,.4);
+
+}
+
+
+.education:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:var(--orange);
+
+    left:-6px;
+
+    top:5px;
+
+    box-shadow:
+        0 0 15px
+        rgba(249,115,22,.6);
+
+}
+
+
+.education h3{
+
+    font-size:17px;
+
+    color:white;
+
+    margin:0 0 5px;
+
+}
+
+
+.education .course{
+
+    color:var(--orange);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+
+.education p{
+
+    font-size:13px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:30px 8%;
+
+    text-align:center;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+    background:#020617;
+
+}
+
+
+footer p{
+
+    margin:auto;
+
+    color:#64748b;
+
+    font-size:13px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    header{
+
+        padding:12px 4%;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:5px;
+
+    }
+
+
+    .logo{
+
+        width:100%;
+
+        text-align:center;
+
+        font-size:22px;
+
+    }
+
+
+    .menu-btn{
+
+        display:none !important;
+
+    }
+
+
+    /* =====================================================
+       MOBILE NAVIGATION
+    ===================================================== */
+
+    nav{
+
+        position:static;
+
+        width:100%;
+
+        display:flex;
+
+        flex-direction:row;
+
+        justify-content:flex-start;
+
+        align-items:center;
+
+        gap:7px;
+
+        padding:8px 2px;
+
+        background:transparent;
+
+        overflow-x:auto;
+
+        overflow-y:hidden;
+
+        white-space:nowrap;
+
+        scrollbar-width:none;
+
+    }
+
+
+    nav::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+
+    nav a{
+
+        flex-shrink:0;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        gap:6px;
+
+        padding:9px 12px;
+
+        border-radius:25px;
+
+        background:#ffffff0d;
+
+        border:1px solid #ffffff12;
+
+        font-size:11px;
+
+    }
+
+
+    nav a i{
+
+        font-size:12px;
+
+        color:var(--orange);
+
+    }
+
+
+    nav a:hover{
+
+        color:white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--orange),
+                var(--light)
+            );
+
+    }
+
+
+    nav a:hover i{
+
+        color:white;
+
+    }
+
+
+    .resume{
+
+        display:none;
+
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about-hero{
+
+        padding:170px 5% 60px;
+
+    }
+
+
+    .page-heading{
+
+        margin-bottom:40px;
+
+    }
+
+
+    .page-heading h1{
+
+        font-size:42px;
+
+    }
+
+
+    .page-heading p{
+
+        font-size:14px;
+
+    }
+
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+
+    .profile-card{
+
+        padding:25px;
+
+    }
+
+
+    .profile-photo img{
+
+        width:180px;
+        height:180px;
+
+    }
+
+
+    .content-card{
+
+        padding:24px;
+
+    }
+
+
+    .values-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:400px){
+
+    .logo{
+
+        font-size:20px;
+
+    }
+
+
+    nav{
+
+        gap:5px;
+
+    }
+
+
+    nav a{
+
+        padding:8px 10px;
+
+        font-size:10px;
+
+    }
+
+
+    nav a i{
+
+        font-size:11px;
+
+    }
+
+
+    .page-heading h1{
+
+        font-size:36px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="logo">
+
+
+<i class="fa-solid fa-laptop-code"></i>
+
+Joskev <span>Developers</span>
+
+
+</div>
+
+<nav>
+
+
+<a href="index.html">
+
+    <i class="fa-solid fa-house"></i>
+
+    Home
+
+</a>
+
+
+<a href="about.html">
+
+    <i class="fa-solid fa-user"></i>
+
+    About
+
+</a>
+
+
+<a href="Technologies.html">
+
+    <i class="fa-solid fa-code"></i>
+
+    Technologies
+
+</a>
+
+
+<a href="services.html">
+
+    <i class="fa-solid fa-briefcase"></i>
+
+    Services
+
+</a>
+
+
+<a href="contact.html">
+
+    <i class="fa-solid fa-envelope"></i>
+
+    Contact
+
+</a>
+
+
+</nav>
+
+<a
+ href="JOSIAH kimutai latest cv 2026.pdf"
+ class="resume">
+
+
+<i class="fa fa-download"></i>
+
+Resume
+
+</a>
+
+</header>
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<main>
+
+<section class="about-hero">
+
+<div class="about-container">
+
+<!-- =================================================
+     PAGE HEADING
+================================================== -->
+
+<div class="page-heading">
+
+
+<div class="page-badge">
+
+    <i class="fa-solid fa-user"></i>
+
+    About Me
+
+</div>
+
+
+<h1>
+
+    Learn About <span>Josiah</span>
+
+</h1>
+
+
+<p>
+
+    Learn about my background, skills and passion
+    for creating modern digital solutions.
+
+</p>
+
+
+</div>
+
+<!-- =================================================
+     ABOUT GRID
+================================================== -->
+
+<div class="about-grid">
+
+<!-- =============================================
+     PROFILE
+============================================== -->
+
+<div class="profile-card">
+
+
+<div class="profile-photo">
+
+    <img
+        src="KIM.png"
+        alt="Josiah Kimutai">
+
+</div>
+
+
+<h2>
+
+    Josiah Kimutai
+
+</h2>
+
+
+<div class="profile-role">
+
+    Full Stack Software Developer
+
+</div>
+
+
+<div class="quick-info">
+
+
+    <div class="info-item">
+
+
+        <div class="info-icon">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+        </div>
+
+
+        <div class="info-text">
+
+            <small>Location</small>
+
+            <strong>
+                Nandi County, Kenya
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="info-item">
+
+
+        <div class="info-icon">
+
+            <i class="fa-solid fa-code"></i>
+
+        </div>
+
+
+        <div class="info-text">
+
+            <small>Experience</small>
+
+            <strong>
+                2+ Years Development
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="info-item">
+
+
+        <div class="info-icon">
+
+            <i class="fa-solid fa-envelope"></i>
+
+        </div>
+
+
+        <div class="info-text">
+
+            <small>Email</small>
+
+            <strong>
+                josiahkimutai78@gmail.com
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="info-item">
+
+
+        <div class="info-icon">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+
+        <div class="info-text">
+
+            <small>Availability</small>
+
+            <strong>
+                Freelance & Full Time
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+<!-- =============================================
+     CONTENT
+============================================== -->
+
+<div class="about-content">
+
+<!-- INTRODUCTION -->
+
+<div class="content-card">
+
+
+<h2>
+
+    <i class="fa-solid fa-hand"></i>
+
+    Hello, I'm Josiah Kimutai
+
+</h2>
+
+
+<p>
+
+    I am a
+    <span class="highlight">
+        Full Stack Software Developer
+    </span>
+    and
+    <span class="highlight">
+        IT Support Specialist
+    </span>
+    from Kenya.
+
+    I create websites, Android applications,
+    business systems and secure software solutions.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+    My goal is to use technology to solve
+    real-world problems and help businesses
+    grow through reliable digital solutions.
+
+</p>
+
+
+</div>
+
+<!-- EDUCATION -->
+
+<div class="content-card">
+
+
+<h2>
+
+    <i class="fa-solid fa-graduation-cap"></i>
+
+    Education & Foundation
+
+</h2>
+
+
+<div class="education">
+
+
+    <h3>
+
+        Diploma in Information Technology
+
+    </h3>
+
+
+    <div class="course">
+
+        Information Technology
+
+    </div>
+
+
+    <p>
+
+        Studied software development, databases,
+        networking, cybersecurity and cloud
+        computing.
+
+    </p>
+
+
+</div>
+
+
+</div>
+
+<!-- EXPERIENCE -->
+
+<div class="content-card">
+
+
+<h2>
+
+    <i class="fa-solid fa-laptop-code"></i>
+
+    What I Do
+
+</h2>
+
+
+<p>
+
+    Building websites, Android applications,
+    APIs and management systems using modern
+    technologies.
+
+</p>
+
+
+</div>
+
+<!-- VALUES -->
+
+<div class="content-card">
+
+
+<h2>
+
+    <i class="fa-solid fa-star"></i>
+
+    My Approach
+
+</h2>
+
+
+<div class="values-grid">
+
+
+    <div class="value">
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+        <h3>
+
+            Innovation
+
+        </h3>
+
+        <p>
+
+            To create secure and innovative
+            solutions that improve people's
+            lives through technology.
+
+        </p>
+
+    </div>
+
+
+    <div class="value">
+
+        <i class="fa-solid fa-code"></i>
+
+        <h3>
+
+            Quality
+
+        </h3>
+
+        <p>
+
+            Writing maintainable and
+            professional software.
+
+        </p>
+
+    </div>
+
+
+    <div class="value">
+
+        <i class="fa-solid fa-mobile-screen"></i>
+
+        <h3>
+
+            Responsive
+
+        </h3>
+
+        <p>
+
+            Applications that work on phones,
+            tablets and computers.
+
+        </p>
+
+    </div>
+
+
+    <div class="value">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h3>
+
+            Security
+
+        </h3>
+
+        <p>
+
+            Building safer systems with
+            security in mind.
+
+        </p>
+
+    </div>
+
+
+    <div class="value">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h3>
+
+            User Focus
+
+        </h3>
+
+        <p>
+
+            Creating practical solutions
+            around real user needs.
+
+        </p>
+
+    </div>
+
+
+    <div class="value">
+
+        <i class="fa-solid fa-rocket"></i>
+
+        <h3>
+
+            Growth
+
+        </h3>
+
+        <p>
+
+            Helping businesses use technology
+            to grow and work smarter.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<p>
+
+
+© 2026 Josiah Kimutai |
+Software Developer
+
+
+</p>
+
+</footer>
+
+</body>
+
+</html>

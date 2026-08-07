@@ -1,0 +1,1573 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services | Joskev Developers</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --orange:#f97316;
+    --light:#fb923c;
+
+    --purple:#8b5cf6;
+    --blue:#06b6d4;
+    --pink:#ec4899;
+
+    --dark:#0f172a;
+    --dark2:#111827;
+
+    --card:#1e293b;
+
+    --gray:#cbd5e1;
+    --muted:#94a3b8;
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:var(--dark);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+body::before,
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    z-index:-1;
+
+    pointer-events:none;
+
+    filter:blur(20px);
+
+}
+
+
+body::before{
+
+    top:-320px;
+    left:-260px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(249,115,22,.23),
+            transparent 70%
+        );
+
+}
+
+
+body::after{
+
+    right:-300px;
+    bottom:-320px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139,92,246,.22),
+            transparent 70%
+        );
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:18px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:
+        rgba(15,23,42,.88);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    z-index:1000;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+.logo > i{
+
+    color:var(--orange);
+
+    font-size:28px;
+
+}
+
+
+.logo div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:1.1;
+
+}
+
+
+.logo strong{
+
+    font-size:22px;
+
+}
+
+
+.logo span{
+
+    color:var(--orange);
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    display:flex;
+
+    gap:28px;
+
+}
+
+
+nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+
+nav a i{
+
+    display:none;
+
+    color:var(--orange);
+
+}
+
+
+nav a:hover{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   RESUME
+========================================================= */
+
+.resume{
+
+    padding:12px 25px;
+
+    border-radius:40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--light)
+        );
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.resume:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(249,115,22,.35);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    padding:155px 8% 70px;
+
+    text-align:center;
+
+}
+
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 18px;
+
+    border-radius:50px;
+
+    background:#f9731620;
+
+    border:1px solid var(--orange);
+
+    color:var(--light);
+
+    font-size:13px;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero h1{
+
+    font-size:58px;
+
+    line-height:1.15;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero h1 span{
+
+    color:var(--orange);
+
+}
+
+
+.hero p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:var(--gray);
+
+}
+
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
+
+.services{
+
+    padding:
+        20px 8% 100px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.service{
+
+    position:relative;
+
+    padding:32px 25px;
+
+    text-align:center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,.95),
+            rgba(15,23,42,.96)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:
+
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.service::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    top:-70px;
+    right:-70px;
+
+    border-radius:50%;
+
+    background:
+        rgba(249,115,22,.10);
+
+    filter:blur(10px);
+
+}
+
+
+.service::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:3px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--pink),
+            var(--purple),
+            var(--blue)
+        );
+
+    transform:
+        scaleX(0);
+
+    transform-origin:center;
+
+    transition:.4s;
+
+}
+
+
+.service:hover{
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(249,115,22,.35);
+
+    box-shadow:
+
+        0 20px 45px
+        rgba(0,0,0,.30);
+
+}
+
+
+.service:hover::after{
+
+    transform:
+        scaleX(1);
+
+}
+
+
+/* =========================================================
+   SERVICE ICON
+========================================================= */
+
+.service-icon{
+
+    width:78px;
+    height:78px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(249,115,22,.15),
+            rgba(139,92,246,.12)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.service-icon i{
+
+    font-size:42px;
+
+    color:var(--orange);
+
+    transition:.4s;
+
+}
+
+
+.service:hover .service-icon i{
+
+    transform:
+        scale(1.15)
+        rotate(4deg);
+
+    filter:
+        drop-shadow(
+            0 0 14px
+            rgba(249,115,22,.7)
+        );
+
+}
+
+
+/* =========================================================
+   SERVICE TEXT
+========================================================= */
+
+.service h3{
+
+    font-size:21px;
+
+    margin-bottom:12px;
+
+}
+
+
+.service p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+    font-size:13px;
+
+}
+
+
+.service ul{
+
+    margin-top:20px;
+
+    list-style:none;
+
+    color:var(--gray);
+
+    line-height:2;
+
+    text-align:left;
+
+    display:inline-block;
+
+}
+
+
+.service li{
+
+    font-size:13px;
+
+}
+
+
+.service li::before{
+
+    content:"✓";
+
+    color:var(--orange);
+
+    font-weight:700;
+
+    margin-right:9px;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+    position:relative;
+
+    padding:90px 8%;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f97316,
+            #ec4899,
+            #8b5cf6
+        );
+
+    background-size:200% 200%;
+
+    animation:
+        ctaColors 8s ease infinite;
+
+}
+
+
+@keyframes ctaColors{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.10);
+
+    top:-200px;
+    left:-100px;
+
+}
+
+
+.cta h2{
+
+    position:relative;
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+
+.cta p{
+
+    position:relative;
+
+    font-size:17px;
+
+    margin-bottom:35px;
+
+}
+
+
+.button{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:16px 40px;
+
+    background:white;
+
+    color:#f97316;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+.button:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,.25);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:30px;
+
+    background:#0b1323;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+}
+
+
+footer span{
+
+    color:var(--orange);
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   NO THREE-DASH MENU
+========================================================= */
+
+@media(max-width:900px){
+
+    header{
+
+        padding:10px 4%;
+
+        flex-direction:column;
+
+        gap:7px;
+
+    }
+
+
+    .logo{
+
+        justify-content:center;
+
+    }
+
+
+    .logo > i{
+
+        font-size:22px;
+
+    }
+
+
+    .logo strong{
+
+        font-size:18px;
+
+    }
+
+
+    .logo span{
+
+        font-size:11px;
+
+    }
+
+
+    nav{
+
+        width:100%;
+
+        display:flex;
+
+        gap:6px;
+
+        justify-content:flex-start;
+
+        overflow-x:auto;
+
+        overflow-y:hidden;
+
+        white-space:nowrap;
+
+        scrollbar-width:none;
+
+        padding:3px 0;
+
+    }
+
+
+    nav::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+
+    nav a{
+
+        flex-shrink:0;
+
+        padding:8px 11px;
+
+        border-radius:25px;
+
+        background:#ffffff0c;
+
+        border:
+            1px solid
+            #ffffff12;
+
+        font-size:10px;
+
+        gap:5px;
+
+    }
+
+
+    nav a i{
+
+        display:inline-block;
+
+        font-size:11px;
+
+    }
+
+
+    nav a:hover{
+
+        color:white;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--orange),
+                var(--light)
+            );
+
+    }
+
+
+    nav a:hover i{
+
+        color:white;
+
+    }
+
+
+    .resume{
+
+        display:none;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero{
+
+        padding:
+            155px 5% 50px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:36px;
+
+    }
+
+
+    .hero p{
+
+        font-size:14px;
+
+    }
+
+
+    /* =====================================================
+       SERVICES
+    ===================================================== */
+
+    .services{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+
+        padding:
+            20px 15px 60px;
+
+    }
+
+
+    .service{
+
+        padding:
+            20px 8px;
+
+        border-radius:16px;
+
+    }
+
+
+    .service-icon{
+
+        width:58px;
+        height:58px;
+
+        border-radius:16px;
+
+        margin-bottom:12px;
+
+    }
+
+
+    .service-icon i{
+
+        font-size:29px;
+
+    }
+
+
+    .service h3{
+
+        font-size:14px;
+
+        margin-bottom:8px;
+
+    }
+
+
+    .service p{
+
+        display:none;
+
+    }
+
+
+    .service ul{
+
+        margin-top:8px;
+
+        line-height:1.7;
+
+    }
+
+
+    .service li{
+
+        font-size:10px;
+
+    }
+
+
+    .service li::before{
+
+        margin-right:5px;
+
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta{
+
+        padding:
+            65px 5%;
+
+    }
+
+
+    .cta h2{
+
+        font-size:27px;
+
+    }
+
+
+    .cta p{
+
+        font-size:13px;
+
+    }
+
+
+    .button{
+
+        padding:
+            13px 28px;
+
+        font-size:13px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:450px){
+
+    .services{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+
+        padding:
+            15px 10px 50px;
+
+    }
+
+
+    .service{
+
+        padding:
+            16px 5px;
+
+    }
+
+
+    .service-icon{
+
+        width:52px;
+        height:52px;
+
+    }
+
+
+    .service-icon i{
+
+        font-size:26px;
+
+    }
+
+
+    .service h3{
+
+        font-size:12px;
+
+    }
+
+
+    .service li{
+
+        font-size:9px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:31px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="logo">
+
+    <i class="fa-solid fa-laptop-code"></i>
+
+    <div>
+
+        <strong>Joskev</strong>
+
+        <span>Developers</span>
+
+    </div>
+
+</div>
+
+
+<!-- VISIBLE NAVIGATION -->
+
+<nav>
+
+    <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        Home
+
+    </a>
+
+
+    <a href="about.html">
+
+        <i class="fa-solid fa-user"></i>
+
+        About
+
+    </a>
+
+
+    <a href="Technologies.html">
+
+        <i class="fa-solid fa-code"></i>
+
+        Technologies
+
+    </a>
+
+
+    <a href="services.html">
+
+        <i class="fa-solid fa-briefcase"></i>
+
+        Services
+
+    </a>
+
+
+    <a href="contact.html">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        Contact
+
+    </a>
+
+</nav>
+
+
+<a
+    href="JOSIAH kimutai latest cv 2026.pdf"
+    class="resume">
+
+    <i class="fa-solid fa-download"></i>
+
+    Download Resume
+
+</a>
+
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-badge">
+
+    <i class="fa-solid fa-sparkles"></i>
+
+    What We Do
+
+</div>
+
+
+<h1>
+
+    Our <span>Professional Services</span>
+
+</h1>
+
+
+<p>
+
+    We design and build modern digital solutions
+    including websites, mobile applications,
+    business systems, cloud platforms and secure
+    software.
+
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services">
+
+
+<!-- WEBSITE -->
+
+<div class="service">
+
+    <div class="service-icon">
+
+        <i class="fa-solid fa-globe"></i>
+
+    </div>
+
+
+    <h3>
+
+        Website Development
+
+    </h3>
+
+
+    <p>
+
+        Professional websites designed
+        for businesses and organizations.
+
+    </p>
+
+
+    <ul>
+
+        <li>Business Websites</li>
+
+        <li>E-commerce Platforms</li>
+
+        <li>Company Portals</li>
+
+        <li>Landing Pages</li>
+
+    </ul>
+
+</div>
+
+
+<!-- MOBILE -->
+
+<div class="service">
+
+    <div class="service-icon">
+
+        <i class="fa-solid fa-mobile-screen-button"></i>
+
+    </div>
+
+
+    <h3>
+
+        Mobile Applications
+
+    </h3>
+
+
+    <p>
+
+        Modern Android and cross-platform
+        applications.
+
+    </p>
+
+
+    <ul>
+
+        <li>Business Apps</li>
+
+        <li>Marketplace Apps</li>
+
+        <li>Delivery Apps</li>
+
+        <li>Custom Solutions</li>
+
+    </ul>
+
+</div>
+
+
+<!-- SOFTWARE -->
+
+<div class="service">
+
+    <div class="service-icon">
+
+        <i class="fa-solid fa-desktop"></i>
+
+    </div>
+
+
+    <h3>
+
+        Custom Software
+
+    </h3>
+
+
+    <p>
+
+        Management systems built
+        for your organization.
+
+    </p>
+
+
+    <ul>
+
+        <li>School Systems</li>
+
+        <li>Hospital Systems</li>
+
+        <li>POS Systems</li>
+
+        <li>Inventory Systems</li>
+
+    </ul>
+
+</div>
+
+
+<!-- CLOUD -->
+
+<div class="service">
+
+    <div class="service-icon">
+
+        <i class="fa-solid fa-cloud"></i>
+
+    </div>
+
+
+    <h3>
+
+        Cloud Solutions
+
+    </h3>
+
+
+    <p>
+
+        Secure cloud deployment
+        and infrastructure.
+
+    </p>
+
+
+    <ul>
+
+        <li>Cloud Databases</li>
+
+        <li>Hosting</li>
+
+        <li>API Integration</li>
+
+        <li>Backups</li>
+
+    </ul>
+
+</div>
+
+
+<!-- AI -->
+
+<div class="service">
+
+    <div class="service-icon">
+
+        <i class="fa-solid fa-robot"></i>
+
+    </div>
+
+
+    <h3>
+
+        Artificial Intelligence
+
+    </h3>
+
+
+    <p>
+
+        Smart systems that automate
+        business processes.
+
+    </p>
+
+
+    <ul>
+
+        <li>AI Chatbots</li>
+
+        <li>OCR Systems</li>
+
+        <li>Automation</li>
+
+        <li>Analytics</li>
+
+    </ul>
+
+</div>
+
+
+<!-- SECURITY -->
+
+<div class="service">
+
+    <div class="service-icon">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+    </div>
+
+
+    <h3>
+
+        Cybersecurity
+
+    </h3>
+
+
+    <p>
+
+        Protection against modern
+        cyber threats.
+
+    </p>
+
+
+    <ul>
+
+        <li>Security Audits</li>
+
+        <li>Penetration Testing</li>
+
+        <li>Network Security</li>
+
+        <li>Data Protection</li>
+
+    </ul>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+<h2>
+
+    Ready To Build Your Next Project?
+
+</h2>
+
+
+<p>
+
+    Let's transform your idea into
+    a professional digital solution.
+
+</p>
+
+
+<a
+    href="contact.html"
+    class="button">
+
+    <i class="fa-solid fa-rocket"></i>
+
+    Get Started
+
+</a>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+© 2026
+<span>Joskev Developers</span>
+| Building Digital Solutions
+
+</footer>
+
+</body>
+
+</html>
+
