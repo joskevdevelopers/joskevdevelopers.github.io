@@ -8,9 +8,7 @@
 
 <title>Josiah Kimutai | Software Developer</title>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
-    rel="stylesheet">
+
 
 <link
     rel="stylesheet"
@@ -42,14 +40,10 @@
 ========================================================= */
 
 * {
-
     margin: 0;
     padding: 0;
-
     box-sizing: border-box;
-
-    font-family: Poppins, sans-serif;
-
+    font-family: Arial, sans-serif;
 }
 
 html {
@@ -2793,35 +2787,20 @@ const loadingInterval =
    OPEN INTRO
 ========================================================= */
 
-window.addEventListener(
-    "load",
-    () => {
+document.addEventListener("DOMContentLoaded", () => {
 
+    setTimeout(() => {
+        intro.classList.add("exit");
+    }, 400);
 
-        setTimeout(() => {
+    setTimeout(() => {
 
-            intro.classList.add(
-                "exit"
-            );
+        intro.classList.add("finished");
+        document.body.style.overflowY = "auto";
 
-        },1500);
+    }, 1100);
 
-
-        setTimeout(() => {
-
-            intro.classList.add(
-                "finished"
-            );
-
-
-            document.body.style.overflowY =
-                "auto";
-
-},2500);
-
-
-    }
-);
+});
 
 
 /* =========================================================
