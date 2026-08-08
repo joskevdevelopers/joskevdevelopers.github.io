@@ -767,7 +767,34 @@ filter:none;
     }
 
 }
+.private-room-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
 
+    color: #fbbf24;
+
+    border: 2px solid #fbbf24;
+
+    background: rgba(251,191,36,.06);
+}
+
+.private-room-btn i {
+    font-size: 16px;
+}
+
+.private-room-btn:hover {
+    color: white;
+
+    background: #f59e0b;
+
+    border-color: #f59e0b;
+
+    box-shadow:
+        0 10px 25px rgba(245,158,11,.35);
+
+    transform: translateY(-4px);
+}
 
 /* =========================================================
    LOADING BAR
@@ -2489,24 +2516,31 @@ p {
         </p>
 
 
-        <div class="buttons">
+     
+<div class="buttons">
 
+    <!-- PUBLIC PROJECTS -->
+    <a
+        class="btn btn-primary"
+        href="projects.html">
 
-            <a
-                class="btn btn-primary"
-                href="projects.html">
+        <i class="fa fa-code"></i>
+        My Projects
 
-                <i class="fa fa-code"></i>
+    </a>
 
-                My Projects
+    <!-- YOUR PRIVATE ROOM -->
+    <a
+        class="btn private-room-btn"
+        href="private.html">
 
-            </a>
+        <i class="fa-solid fa-lock"></i>
+        My Private Room
 
+    </a>
 
-       
+</div>
 
-
-        </div>
 
 
         <!-- SOCIAL LINKS -->
