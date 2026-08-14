@@ -733,8 +733,418 @@ footer span{
         justify-content:center;
     }
 }
+/* =========================================================
+   FLOATING SMARTPOS MANUAL DOWNLOAD
+========================================================= */
+/* =========================================================
+   SMARTPOS MANUAL DOWNLOAD BUTTON
+========================================================= */
+
+.smartpos-floating-download{
+    position:fixed;
+
+    right:24px;
+    bottom:24px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    min-width:230px;
+    padding:12px 16px;
+
+    background:linear-gradient(
+        135deg,
+        #f97316 0%,
+        #ea580c 100%
+    );
+
+    color:#fff;
+    text-decoration:none;
+
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:14px;
+
+    font-size:13px;
+    font-weight:700;
+
+    z-index:9999;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.45),
+        0 5px 20px rgba(249,115,22,.25);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+/* HOVER */
+
+.smartpos-floating-download:hover{
+    transform:translateY(-4px);
+
+    background:linear-gradient(
+        135deg,
+        #fb923c 0%,
+        #f97316 100%
+    );
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,.5),
+        0 8px 28px rgba(249,115,22,.4);
+}
+
+/* =========================================================
+   BOOK / PDF ICON
+========================================================= */
+
+.smartpos-floating-icon{
+    width:38px;
+    height:38px;
+
+    flex:0 0 38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:rgba(255,255,255,.16);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    font-size:19px;
+    line-height:1;
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.smartpos-floating-content{
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:4px;
+
+    line-height:1.1;
+
+    flex:1;
+}
+
+.smartpos-floating-title{
+    font-size:13px;
+    font-weight:800;
+    color:#fff;
+}
+
+.smartpos-floating-subtitle{
+    font-size:9px;
+    font-weight:500;
+
+    color:#fed7aa;
+}
+
+/* =========================================================
+   DOWNLOAD ARROW
+========================================================= */
+
+.smartpos-download-arrow{
+    width:30px;
+    height:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+
+    background:rgba(255,255,255,.12);
+
+    font-size:17px;
+    font-weight:800;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.smartpos-floating-download:hover
+.smartpos-download-arrow{
+    background:rgba(255,255,255,.2);
+    transform:translateY(2px);
+}
+
+/* =========================================================
+   NEW BADGE
+========================================================= */
+
+.smartpos-new{
+    position:absolute;
+
+    top:-9px;
+    right:-7px;
+
+    padding:4px 8px;
+
+    background:#22c55e;
+
+    color:#052e16;
+
+    border:2px solid var(--dark);
+
+    border-radius:20px;
+
+    font-size:8px;
+    font-weight:900;
+
+    letter-spacing:.5px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.3);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .smartpos-floating-download{
+        right:16px;
+        bottom:18px;
+
+        min-width:auto;
+
+        width:auto;
+
+        max-width:calc(100vw - 32px);
+
+        padding:10px 12px;
+
+        gap:8px;
+
+        border-radius:13px;
+    }
+
+    .smartpos-floating-icon{
+        width:34px;
+        height:34px;
+
+        flex:0 0 34px;
+
+        font-size:17px;
+    }
+
+    .smartpos-floating-title{
+        font-size:11px;
+    }
+
+    .smartpos-floating-subtitle{
+        font-size:8px;
+    }
+
+    .smartpos-download-arrow{
+        width:27px;
+        height:27px;
+
+        font-size:15px;
+    }
+
+    .smartpos-new{
+        top:-8px;
+        right:-5px;
+
+        padding:3px 7px;
+
+        font-size:7px;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:400px){
+
+    .smartpos-floating-download{
+        right:12px;
+        bottom:14px;
+
+        max-width:calc(100vw - 24px);
+
+        padding:9px 10px;
+    }
+
+    .smartpos-floating-icon{
+        width:32px;
+        height:32px;
+
+        flex-basis:32px;
+    }
+
+    .smartpos-floating-title{
+        font-size:10px;
+    }
+
+    .smartpos-floating-subtitle{
+        font-size:7px;
+    }
+
+    .smartpos-download-arrow{
+        width:25px;
+        height:25px;
+
+        font-size:14px;
+    }
+}
+/* =========================================================
+   MOBILE FLOATING DOWNLOAD BUTTON
+========================================================= */
+
+@media(max-width:600px){
+
+    .smartpos-floating-download{
+        right:14px;
+        bottom:18px;
+
+        width:auto;
+        min-width:190px;
+        max-width:calc(100vw - 28px);
+
+        height:auto;
+
+        padding:10px 12px;
+
+        display:flex;
+        align-items:center;
+        justify-content:flex-start;
+
+        gap:9px;
+
+        border-radius:14px;
+
+        font-size:12px;
+    }
+
+    .smartpos-floating-icon{
+        width:34px;
+        height:34px;
+
+        flex:0 0 34px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        border-radius:10px;
+
+        font-size:18px;
+    }
+
+    .smartpos-floating-content{
+        display:flex;
+
+        flex-direction:column;
+
+        gap:3px;
+
+        flex:1;
+
+        min-width:0;
+    }
+
+    .smartpos-floating-title{
+        font-size:11px;
+
+        white-space:nowrap;
+    }
+
+    .smartpos-floating-subtitle{
+        font-size:8px;
+
+        white-space:nowrap;
+    }
+
+    .smartpos-download-arrow{
+        display:flex;
+
+        align-items:center;
+        justify-content:center;
+
+        width:28px;
+        height:28px;
+
+        flex:0 0 28px;
+
+        border-radius:8px;
+
+        background:rgba(255,255,255,.12);
+
+        font-size:15px;
+    }
+
+    .smartpos-new{
+        top:-7px;
+        right:-5px;
+
+        padding:3px 7px;
+
+        font-size:7px;
+    }
+}
 
 
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:380px){
+
+    .smartpos-floating-download{
+        right:10px;
+        bottom:14px;
+
+        min-width:175px;
+
+        max-width:calc(100vw - 20px);
+
+        padding:9px 10px;
+
+        gap:7px;
+    }
+
+    .smartpos-floating-icon{
+        width:31px;
+        height:31px;
+
+        flex-basis:31px;
+
+        font-size:16px;
+    }
+
+    .smartpos-floating-title{
+        font-size:10px;
+    }
+
+    .smartpos-floating-subtitle{
+        font-size:7px;
+    }
+
+    .smartpos-download-arrow{
+        width:25px;
+        height:25px;
+
+        flex-basis:25px;
+
+        font-size:13px;
+    }
+}
 /* =========================================================
    SMALL PHONES
 ========================================================= */
@@ -1513,6 +1923,22 @@ footer span{
 
 </footer>
 
+<!-- =====================================================
+     FLOATING SMARTPOS MANUAL DOWNLOAD
+===================================================== -->
 
+<a
+    href="Joskev Developers SmartPOS.pdf"
+    class="smartpos-floating-download"
+    download
+    aria-label="Download Joskev Developers SmartPOS Manual"
+    title="Download SmartPOS Manual"
+>
+    <span class="smartpos-floating-icon">↓</span>
+
+    <span class="smartpos-floating-text">
+        Download SmartPOS Manual
+    </span>
+</a>
 </body>
 </html>
